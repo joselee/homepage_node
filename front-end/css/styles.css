@@ -113,6 +113,22 @@
 }
  /* Person list styles end */
 
+ /* Profile carousel styles */
+.photoRegion{
+    display: inline-block;
+}
+
+.profileImage{
+    width: 200px;
+}
+
+.infoRegion{
+    display: inline-block;
+    vertical-align: top;
+}
+ /* Profile carousel styles end */
+
+
 /* Chat styles */
 #chatHeader h3 {
     margin: 0 0 10px 0;
