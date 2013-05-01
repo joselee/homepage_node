@@ -10,8 +10,12 @@ define(
             controller: Controller,
             appRoutes: {
                 "": "home",
+                "mySQL": "personList",
 				"profile/:personid" : "profile",
-                "chat": "chat"
+                "localStorage": "localStorage",
+                "chat": "chat",
+                "about": "about",
+                "contact": "contact"
             },
             start: function() {
                 Backbone.history.start();

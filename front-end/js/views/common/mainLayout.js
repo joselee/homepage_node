@@ -5,19 +5,27 @@ define(
     [
         "backbone.marionette",
         "hbs!templates/mainLayoutTemplate",
-        "views/header/headerView",
+        "views/common/headerView",
+        "views/home/homeView",
         "views/personlist/personsCollectionView",
         "views/profile/profileCollectionView",
+        "views/localStorage/localStorageView",
         "views/chat/chatView",
+        "views/about/aboutView",
+        "views/contact/contactView",
 		"vent"
     ],
     function MainLayout(
 		Marionette,
 		MainLayoutTemplate,
-		HeaderView,
-		PersonsCollectionView,
+		headerView,
+        homeView,
+		personsCollectionView,
         ProfileCollectionView,
-        ChatView,
+        localStorageView,
+        chatView,
+        aboutView,
+        contactView,
 		Vent
 		) {
 		"use strict";
@@ -33,24 +41,40 @@ define(
 				_.bindAll(this);
 			},
             onShow:function () {
-                this.headerRegion.show(new HeaderView);
+                this.headerRegion.show(headerView);
             },
 			showHome: function(){
-				this.mainContentRegion.show(new PersonsCollectionView);
+				this.mainContentRegion.show(homeView);
 			},
+            showPersonList: function(){
+                this.mainContentRegion.show(personsCollectionView);
+            },
 			showProfileCarousel: function(profileId){
                 var profileCollectionView = new ProfileCollectionView({profileId:profileId});
                 this.mainContentRegion.show(profileCollectionView);
 			},
+            showLocalStorage: function(){
+                this.mainContentRegion.show(localStorageView);
+            },
             showChat: function(){
-                this.mainContentRegion.show(ChatView);
+                this.mainContentRegion.show(chatView);
+            },
+            showAbout: function(){
+                this.mainContentRegion.show(aboutView);
+            },
+            showContact: function(){
+                this.mainContentRegion.show(contactView);
             }
         });
 
         var mainLayout = new MainLayout();
-		mainLayout.listenTo(Vent, "show:home", mainLayout.showHome);
-		mainLayout.listenTo(Vent, "show:profile", mainLayout.showProfileCarousel);
-		mainLayout.listenTo(Vent, "show:chat", mainLayout.showChat);
+        mainLayout.listenTo(Vent, "show:home", mainLayout.showHome);
+		mainLayout.listenTo(Vent, "show:personList", mainLayout.showPersonList);
+        mainLayout.listenTo(Vent, "show:profile", mainLayout.showProfileCarousel);
+		mainLayout.listenTo(Vent, "show:localStorage", mainLayout.showLocalStorage);
+        mainLayout.listenTo(Vent, "show:chat", mainLayout.showChat);
+        mainLayout.listenTo(Vent, "show:about", mainLayout.showAbout);
+		mainLayout.listenTo(Vent, "show:contact", mainLayout.showContact);
 
         return mainLayout;
     }

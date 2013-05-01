@@ -12,6 +12,6 @@ define(
             collection: personsCollection
         });
 
-        return PersonsCollectionView;
+        return new PersonsCollectionView();
     }
 );

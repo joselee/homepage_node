@@ -5,9 +5,9 @@ define(
         "collections/personsCollection",
         "router"
     ],
-    function PersonsCollectionView(Marionette, ProfileItemView, personsCollection, Router){
+    function ProfileCollectionView(Marionette, ProfileItemView, personsCollection, Router){
 
-        var PersonsCollectionView = Marionette.CollectionView.extend({
+        var ProfileCollectionView = Marionette.CollectionView.extend({
             className: "profileCollectionView",
             itemView: ProfileItemView,
             collection: personsCollection,
@@ -33,6 +33,6 @@ define(
             }
         });
 
-        return PersonsCollectionView;
+        return ProfileCollectionView;
     }
 );
