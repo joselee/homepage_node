@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
-var http = app.listen(80);
+var port = 8000;
+var http = app.listen(port);
 var socketio = require('socket.io');
 var io = socketio.listen(http);
 var personController = require("./controllers/personController");
@@ -40,5 +41,5 @@ io.sockets.on('connection', function (client) {
 });
 
 /*--- INIT STATEMENTS ---*/
-console.log("Server is running on port 80.");
+console.log("Server is running on port " + port + ".");
 console.log("Remeber! mySQL server needs to be running!");
