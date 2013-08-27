@@ -55,23 +55,10 @@ define(
                 content.scrollTop(content[0].scrollHeight);
             },
             changeNameBindings: function(){
-                var self = this;
-                var textBox = $("#tbChatInput", this.$el);
-                var changeNameLink = $("#changeName", this.$el);
-                var bubble = $('#changeNameBubble', this.$el);
-                
-                changeNameLink.on("click", function(){
-                    self.author = textBox.val();
-                    self.iosocket.emit('changeName', self.author);
-                    textBox.val('').focus();
-                    bubble.text("Name changed!");
-                    setTimeout(function(){
-                        bubble.text("Enter your name above and click here!");
-                    }, 2000);
-                });
 
-                changeNameLink.hover(function() {
-                    bubble.fadeToggle();
+                $("#btnChangeName", this.$el).on("click", function(){
+                    $("#tbChangeName", self.$el).animate({width: 'toggle'});
+                    self.author = $("#tbChangeName", self.$el).val();
                 });
             },
             onBeforeClose: function(){

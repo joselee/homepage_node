@@ -5,7 +5,7 @@
     width: 100%;
     line-height: 40px;
     background: #333;
-	overflow: hidden;
+    overflow: hidden;
     clear: both;
 }
 
@@ -26,28 +26,30 @@
 .headerLinksContainer {
     float: left;
     position: relative;
-	background: #333;
+    background: #333;
 }
 
 .headerLinkListItem {
-	margin: 0 0 0 20px;
-	float: left;
+    margin: 0 0 0 20px;
+    float: left;
     position: relative;
 }
 
 .headerLink {
     color: #999;
     margin: 0 10px;
-	display: block;
-	width: 100%;
-	height: 100%;
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
 }
 
 .mobileMenuButton {
     display: block;
-	position: absolute;
-	top: 5px;
-	right: 30px;
+    position: absolute;
+    top: 5px;
+    right: 30px;
     padding: 6px 15px;
     box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.1), 0 2px 0 rgba(255, 255, 255, 0.075);
     border: 1px solid #bbbbbb;
@@ -60,7 +62,7 @@
 
 .mobileMenuButton:active {
     top: 6px;
-	right: 29px;
+    right: 29px;
     background-position: 0 38px;
 }
 
@@ -82,6 +84,7 @@
     position: relative;
     width:100%;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
     padding: 20px 20px 0 20px;
 }
 
@@ -100,6 +103,7 @@
     border: solid 1px black;
     border-radius: 4px;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 .personItemView .cardPicture {
@@ -112,22 +116,6 @@
     margin-left: 60px;
 }
  /* Person list styles end */
-
- /* Profile carousel styles */
-.photoRegion{
-    display: inline-block;
-}
-
-.profileImage{
-    width: 200px;
-}
-
-.infoRegion{
-    display: inline-block;
-    vertical-align: top;
-}
- /* Profile carousel styles end */
-
 
 /* Chat styles */
 #chatHeader h3 {
@@ -171,30 +159,8 @@
     border: solid 1px rgb(170,170,170)
 }
 
-#changeName {
-    color: rgb(100,100,255);
-    font-size: 0.8em;
-    font-weight: lighter;
-    text-decoration: underline;
-    display: inline-block;
-    margin: 5px 0;
-}
-
-#changeName:hover {
-    cursor: pointer;
-}
-
-#changeNameBubble {
-    display: none;
-    background: rgba(0, 0, 0, 0.85);
-    padding: 3px 7px;
-    margin: 0 0 0 5px;
-    color: #FFF;
-    font-size: 0.8em;
-    font-weight: lighter;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+.form-horizontal {
+    padding: 10px 0;
 }
 /* Chat sytles end */
 
@@ -224,13 +190,13 @@
 
     .headerLinksContainer {
         display: none;
-		width: 100%;
+        width: 100%;
     }
-	
-	.headerLinkListItem {
-		width: 100%;
-		display: block;
-	}
+    
+    .headerLinkListItem {
+        width: 100%;
+        display: block;
+    }
 }
 
 /*Tablets*/
